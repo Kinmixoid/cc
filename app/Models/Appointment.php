@@ -6,7 +6,6 @@ use App\Enums\AppointmentStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Appointment extends Model
 {
@@ -36,14 +35,9 @@ class Appointment extends Model
         'appointment_type_id' => 'integer',
     ];
 
-    public function customer(): HasOne
+    public function customer(): BelongsTo
     {
-        return $this->hasOne(Customer::class);
-    }
-
-    public function createdBy(): HasOne
-    {
-        return $this->hasOne(User::class);
+        return $this->BelongsTo(Customer::class);
     }
 
     public function appointmentType(): BelongsTo
