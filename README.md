@@ -34,3 +34,7 @@ However, some of the filters, sorts, and searches in the admin panel do those op
 Depending on the use cases and the amount of data, this could be of concern. Adding additional indices would improve the 
 performance of those operations, however, they will increase memory usage as well as slowing down insert and update 
 operations.
+
+Additionally, some 3rd party integrations might be necessary to provide additional functionality. For example, we might
+want to use a mailing service to send confirmation emails to customers. The response times for such services might vary,
+so such requests should be made asynchronously leveraging Laravel's queue system.
