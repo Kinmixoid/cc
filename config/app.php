@@ -5,6 +5,10 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    'appointments' => [
+        'reservation_duration' => 15,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
